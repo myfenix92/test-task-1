@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  margin: 1rem;
+}
+
+form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem 1rem;
+}
+
+legend {
+  border: 1px solid #62dbcb;
+  background-color: #fff;
+  font-weight: 700;
+  padding: .2rem .4rem;
+}
+
+.about_client {
+  font-size: 1.2rem;
+  margin: .3rem;
+  border-radius: 10px;
+  border-color: #62dbcb;
+  background-color: #d2f1ed;
+}
+
+.about_client__info-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 1rem .5rem;
+}
+
+.about_client__sex-block {
+  padding: .2rem .4rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+input,
+select {
+  padding: .3rem;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+input:not(input[type="radio"]):not(input[type="checkbox"]),
+select {
+  border: 1px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+label {
+  padding: .2rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+input[type="radio"] {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+
+@media screen and (max-width: 1170px) {
+  form {
+    display: block;
+  }
+  .about_client {
+    font-size: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about_client,
+  input {
+    font-size: .87rem;
+  }
+  select {
+    font-size: .85rem;
+  }
+  .about_client__info-block {
+    display: block;
+    padding: .5rem;
+  }
+  label {
+    display: block;
+    padding: .2rem;
+  }
+  input[type="radio"],
+  input[type="checkbox"],
+  .label-sex,
+  .label_send-sms {
+    display: inline;
+  }
+  select,
+  input:not(input[type="radio"]):not(input[type="checkbox"]) {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

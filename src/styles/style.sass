@@ -1,0 +1,97 @@
+@import reset
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+$border-color: #62dbcb
+$background-color-field: #d2f1ed
+$font-family-Roboto: 'Roboto', sans-serif
+
+body
+  font-family: $font-family-Roboto
+
+main
+  margin: 1rem
+
+form
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 1rem 1rem
+
+legend
+  border: 1px solid $border-color
+  background-color: #fff
+  font-weight: 700
+  padding: .2rem .4rem
+
+.about_client
+  font-size: 1.2rem
+  margin: .3rem
+  border-radius: 10px
+  border-color: $border-color
+  background-color: $background-color-field
+  &__info-block
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+    padding: 1rem .5rem
+  &__sex-block
+    padding: .2rem .4rem
+    flex: 1
+
+input,
+select
+  padding: .3rem
+  flex: 2
+  font-size: 1rem
+  font-weight: 300
+
+input:not(input[type="radio"]):not(input[type="checkbox"]),
+select
+  border: 1px solid
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12)
+
+label
+  padding: .2rem
+  flex: 1
+  cursor: pointer
+  font-weight: 400
+
+input[type="radio"]
+  flex: 0
+
+@media screen and ( max-width: 1170px)
+
+  form 
+    display: block
+
+  .about_client
+    font-size: 1rem
+    margin-top: .5rem 
+    margin-bottom: .5rem
+
+@media screen and ( max-width: 375px)
+
+  .about_client,
+  input
+    font-size: .87rem
+  
+  select
+    font-size: .85rem
+  
+  .about_client__info-block 
+    display: block
+    padding: .5rem
+  
+  label
+    display: block
+    padding: .2rem
+
+  input[type="radio"],
+  input[type="checkbox"],
+  .label-sex, 
+  .label_send-sms
+    display: inline
+
+  select,
+  input:not(input[type="radio"]):not(input[type="checkbox"])
+    width: 100%
