@@ -242,7 +242,7 @@ export default {
 
     clientPhoneData: {
       required,
-      numeric: (val) => /[7]\d{10}/.test(val),
+      numeric: (val) => /[7]\d{10}$/.test(val),
     },
 
     groupsClientData: {
