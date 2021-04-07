@@ -44,11 +44,11 @@
          <div class="about_client__info-block">
            <label for="about_client__date-birth">Дата рождения*</label>
            <div class="about_client__input-required-block">
-           <input type="date" name="date-birth" id="about_client__date-birth"
+           <input type="text" name="date-birth" id="about_client__date-birth"
            v-model="clientDateBirthData" @blur="$v.clientDateBirthData.$touch()">
             <div class="error" v-if="$v.clientDateBirthData.$error">
-            <template v-if="!$v.clientDateBirthData.invalid">
-              Дата рождения обязательна для заполнения
+            <template v-if="!$v.clientDateBirthData.numeric">
+              Дата рождения в формате ДД.ММ.ГГГГ
             </template>
             </div>
            </div>
@@ -60,7 +60,7 @@
             placeholder="79991234567" v-model="clientPhoneData"
             @blur="$v.clientPhoneData.$touch()">
             <div class="error" v-if="$v.clientPhoneData.$error">
-            <template v-if="!$v.clientPhoneData.number">
+            <template v-if="!$v.clientPhoneData.numeric">
               Телефон содержит только цифры в формате 79991234567
             </template>
             </div>
@@ -190,11 +190,11 @@
           <div class="about_client__info-block">
             <label for="about_client__date-issued">Дата выдачи*</label>
             <div class="about_client__input-required-block">
-            <input type="date" id="about_client__date-issued"  v-model="dateIssuedData"
+            <input type="text" id="about_client__date-issued"  v-model="dateIssuedData"
             @blur="$v.dateIssuedData.$touch()">
             <div class="error" v-if="$v.dateIssuedData.$error">
-            <template v-if="!$v.dateIssuedData.invalid">
-              Дата выдачи обязательна для заполнения
+            <template v-if="!$v.dateIssuedData.numeric">
+              Дата выдачи в формате ДД.ММ.ГГГГ
             </template>
             </div>
             </div>
@@ -238,6 +238,7 @@ export default {
 
     clientDateBirthData: {
       required,
+      numeric: (val) => /^\d{1,2}\.\d{1,2}\.\d{4}$/.test(val),
     },
 
     clientPhoneData: {
@@ -259,6 +260,7 @@ export default {
 
     dateIssuedData: {
       required,
+      numeric: (val) => /^\d{1,2}\.\d{1,2}\.\d{4}$/.test(val),
     },
   },
 };
